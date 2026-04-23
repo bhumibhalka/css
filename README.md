@@ -2,7 +2,7 @@
 
 box : -> includes content, padding, margin , border 
 
-margin -> use to seprate two things
+margin -> use to seprate two things (clear area outside the border)
 padding -> inside the box the soace between border and content
 
 margin collapse means two box , box 1 have margin of 5px and 2nd box have margin of 7px the margin between them is gonna be 7px
@@ -29,6 +29,8 @@ element: div {}
 class : .dn {}
 
 id : #hg {}
+div b {}
+div > b {} b should be the direct child of div
 
 li.red {} -> only li's who have class of red
 li.red.green ->li ony with these two classes
@@ -37,8 +39,23 @@ p:focus {},  psudeo classes
 div::after,
 ul li {} -> only li's that are inside ul
 
-ul:first-child {}
+li:first-child {}
  last child
+
+span: only-child {}
+
+li: only-child {} -> li child 
+span: only-child
+
+li: last-of-type {} last li
+li: nth-last-of-type(2){}
+span:not(.green) -> li thats doesnt have a class of green
 
  ul:nth-child(2n) {}
  
+ siblings: li.red ~ li {} -> li next to the li.red not before it just after it 
+
+ li.red + 1 {} -> just one li next to the li who have class of red
+  li.red +  li.green -> only check the nect li but it should also have a class of green
+
+  input: required {} -> who have required ,aslo disabled
